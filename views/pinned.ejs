@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Pinned</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header text-center">
+      <h1>Profile</h1>
+      <a href="/profile" class="btn btn-secondary">Profile</a>
+      <a href="/logout" class="btn btn-secondary">Logout</a>
+    </div>
+    <div class="row mb-3">
+      <!-- LOCAL INFORMATION -->
+      <div class="container">
+        <div class="well">
+          <h3>Local</h3>
+          <% if (user.local.email) { %>
+          <p>
+            <strong>id</strong>: <%= user._id %><br>
+            <strong>email</strong>: <%= user.local.email %><br>
+          </p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- LOCAL INFORMATION -->
+      <div class="container">
+        <% if (pinned) { %>
+        <h3>Pinned</h3>
+        <ul class="messages">
+          <% for (var i = 0; i < pinned.length; i++) { %>
+          <li class="message">
+            <span><%= pinned[i].title %></span>
+            <span><%= pinned[i].year %></span>
+            <span><i class="fa fa-thumbtack" aria-hidden="true"></i></span>
+          </li>
+          <% } %>
+        </ul>
+        <% } %>
+      </div>
+    </div>
+    <script src="mainPinned.js"></script>
+</body>
+
+</html>

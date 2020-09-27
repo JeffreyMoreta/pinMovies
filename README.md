@@ -2,9 +2,12 @@
 
 1. Clone repo
 2. run `npm install`
-3. run `npm fund`
 
 ## Usage
 
 1. run `node server.js`
 2. Navigate to `localhost:8080`
+
+## Credit
+
+Modified from Scotch.io's auth tutorial
